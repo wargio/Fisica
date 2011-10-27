@@ -8,7 +8,7 @@ PRG2	=	millikan
 PRG3	=	millikan_ohm
 
 PRGC1	=	$(LIBSTAT) devstd.cpp
-PRGC2	=	$(LIBMILLIKAN) millikan.cpp
+PRGC2	=	$(LIBSTAT) $(LIBMILLIKAN) millikan.cpp
 PRGC3	=	Millikan_Resistenza.cpp
 
 all: compile
@@ -31,4 +31,7 @@ ohm: all
 	./millikan_ohm
 
 clean:
-	rm -rf $(PRG1) $(PRG2) $(PRG3) 
+	rm -rf $(PRG1) $(PRG2) $(PRG3)
+
+
+

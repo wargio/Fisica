@@ -4,10 +4,12 @@
 #include <stdlib.h>
 #include <math.h>
 #include "millikan_funcs.h"
+#include "stat_funcs.h"
+
 using namespace std;
 using namespace millikan;
+using namespace statistica;
 
-const string path="/home/giovanni/Documenti/Statistica/0Volt.dat";
 ////////////////////////////////////////////////////////////////
 //STRUTTURA FILE:
 //	NUM_TOT_DATI (conta solo dopo diff di potenziale) 
@@ -35,7 +37,7 @@ int main (){
 	long double OHM=0;	//Resistenza
 //	long double Vreg = 0;   // velocità di regime
 	fstream FILE;
-	//string path;
+	string path="/home/giovanni/Documenti/Statistica/0Volt.dat";
 	while(1){
 		cerr << "////////////////////////////////////////////////////\nIn ";
 		system("pwd");
@@ -44,7 +46,7 @@ int main (){
 		cerr << "-----------*.txt----------\n";
 		system(" ls *.txt");
 		cerr << "////////////////////////////////////////////////////\n";
-		cerr << "File da cui prendere i dati: ";
+//		cerr << "File da cui prendere i dati: ";
 //		cin >> path;
 		FILE.open(path.c_str(),ios::in);
 		if(FILE.fail()){
@@ -60,13 +62,23 @@ int main (){
 	t = new long double [N];
 	v = new long double [N];
 	r = new long double [N];
-	cerr << endl << raggio_goccia(32.9E-6) << endl;
 	
-	
-	
-	
-	
-	
+	for(int i=0;i<N;i++){
+		FILE >> t[i];
+		FILE >> v[i];
+		FILE >> r[i];
+	}
+	long double A[N];
+	for(int i=0;i<N;i++){
+		A[i]=raggio_goccia(v[i]);
+//		cerr << "raggio_goccia " << raggio_goccia(v[i]) << " 	" << r[i] << "	" << chiR(chiQ(v,N,r),N) << endl;
+		
+	}
+	for(int i=0;i<N;i++){
+//		A[i]=raggio_goccia(v[i]);
+		cerr << "raggio_goccia " << A[i] << " 	" << r[i] << "	" << chiR(chiQ(A,N,r),N) << endl;
+		
+	}
 	delete [] t,v,r;
 	return 0;
 }

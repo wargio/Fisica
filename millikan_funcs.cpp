@@ -56,7 +56,7 @@ namespace millikan {
 		return 4*M_PI*pow(r,3)*G*uOlio;
 	}
 	long double raggio_goccia(long double v){
-		return (9*nAria*v)/(2*G*uOlio);
+		return sqrt((9*nAria*v)/(2*G*uOlio));
 	}
 
 
