@@ -45,7 +45,7 @@ int main (){
 		system("ls *.dat ");
 		cerr << "-----------*.txt----------\n";
 		system(" ls *.txt");
-		cerr << "////////////////////////////////////////////////////\n";
+		cerr << "\n////////////////////////////////////////////////////\n";
 //		cerr << "File da cui prendere i dati: ";
 //		cin >> path;
 		FILE.open(path.c_str(),ios::in);
@@ -68,15 +68,15 @@ int main (){
 		FILE >> v[i];
 		FILE >> r[i];
 	}
-	long double A[N];
+	long double Raggio_goccia[N];
 	for(int i=0;i<N;i++){
-		A[i]=raggio_goccia(v[i]);
+		Raggio_goccia[i]=raggio_goccia(v[i]);
 //		cerr << "raggio_goccia " << raggio_goccia(v[i]) << " 	" << r[i] << "	" << chiR(chiQ(v,N,r),N) << endl;
 		
 	}
 	for(int i=0;i<N;i++){
 //		A[i]=raggio_goccia(v[i]);
-		cerr << "raggio_goccia " << A[i] << " 	" << r[i] << "	" << chiR(chiQ(A,N,r),N) << endl;
+		cerr << "raggio_goccia " << Raggio_goccia[i] << " 	" << r[i] << "	" << chiR(chiQ(A,N,r),N) << endl;
 		
 	}
 	delete [] t,v,r;
