@@ -76,7 +76,7 @@ int main (){
 	}
 	for(int i=0;i<N;i++){
 //		A[i]=raggio_goccia(v[i]);
-		cerr << "raggio_goccia " << Raggio_goccia[i] << " 	" << r[i] << "	" << chiR(chiQ(A,N,r),N) << endl;
+		cerr << "raggio_goccia " << Raggio_goccia[i] << " 	" << r[i] << "	" << chiR(chiQ(Raggio_goccia,N,r),N) << endl;
 		
 	}
 	delete [] t,v,r;
