@@ -225,25 +225,24 @@ int main (){
 	Millikan G8(DV[8],Spaz,temperatura[8],tempo24,tempo25,tempo26,N,"G8");
 
 
-	G0.Print_carica();
+	G0.Print_all();
 	cout << "\n\n";
-	G1.Print_carica();
+	G1.Print_all();
 	cout << "\n\n";
-	G2.Print_carica();
+	G2.Print_all();
 	cout << "\n\n";
-	G3.Print_carica();
+	G3.Print_all();
 	cout << "\n\n";
-	G4.Print_carica();
+	G4.Print_all();
 	cout << "\n\n";
-	G5.Print_carica();
+	G5.Print_all();
 	cout << "\n\n";
-	G6.Print_carica();
+	G6.Print_all();
 	cout << "\n\n";
-	G7.Print_carica();
+	G7.Print_all();
 	cout << "\n\n";
-	G8.Print_carica();
+	G8.Print_all();
 	cout << "\n\n";
-	
 	unsigned int N1;
 	fstream F,FF;
 	F.open("/home/giovanni/Documenti/Statistica/dati/carica.dat",ios::in);
@@ -265,11 +264,15 @@ int main (){
 			}
 		}
 	}
+	cerr << "\n----------------carica----------------\n";
 	for(int i=0;i<N1;i++){
-		cerr << q[i]<< endl;
+		cerr << q[i] << "	";
+		if((i+1)%3==0) cerr << endl;
 	}
+	cerr << "\n-----------------S(q)-----------------\n";
 	for(int i=0;i<N1;i++){
-		cerr << Sq(q,N1,x[i]) << endl;
+		cerr << Sq(q,N1,x[i]) << "	";
+		if((i+1)%3==0) cerr << endl;
 	}
 	return 0;
 }
