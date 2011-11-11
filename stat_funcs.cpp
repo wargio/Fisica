@@ -35,6 +35,7 @@ namespace statistica{
 	}
 
 	long double chiR(long double chi,unsigned int liberta){
+		if(liberta>23) liberta--;
 		return chi/liberta;
 	}
 }
